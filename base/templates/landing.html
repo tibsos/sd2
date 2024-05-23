@@ -1,0 +1,478 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>СайтоДел</title>
+
+    <meta name="description" content="Создание сайтов под ключ. Профессиональные услуги по разработке сайтов для вашего бизнеса.">
+    <meta name="keywords" content="создание сайтов, веб-дизайн, разработка сайтов, веб-разработка, создание сайтов под ключ">
+
+    {% compress css %}
+        <link rel="stylesheet" href="{% static 'scss/base/landing.scss' %}" type='text/x-scss'>
+    {% endcompress %}
+
+    <style>
+
+        @font-face {
+            font-family: PDI;
+            src: url("{% static 'fonts/PlayfairDisplay-Italic.ttf' %}");
+        }
+
+        @font-face {
+            font-family: YOR;
+            src: url("{% static 'fonts/YesevaOne-Regular.ttf' %}");
+        }
+
+        body, button, input {
+            font-family: YOR;
+        }
+
+        body {
+
+            position: absolute;
+            top: 0; 
+
+            background: #fff;
+            color: #000;
+            letter-spacing: 3px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        h1 {margin: 0;}
+
+        header, footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        header {
+
+            position: sticky;
+            top: 70px;
+            left: 200px;
+
+            width: calc(100% - 400px);
+
+            padding: 20px;
+
+            border-radius: 200px;
+
+            z-index: 10;
+
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #666b5e;
+
+            backdrop-filter: blur(5px) saturate(180%);
+            -webkit-backdrop-filter: blur(5px) saturate(180%);
+
+
+        }
+
+        .logo {
+
+            position: relative;
+            left: 10px;
+
+            width: 95px;
+            height: 95px;
+
+            border-radius: 200px;
+
+            box-shadow:  5px 5px 10px #b5b5b5,
+                -5px -5px 10px #ffffff;
+
+        }
+
+        #contactBtn {
+
+            width: 380px;
+            height: 90px;
+
+            border-radius: 200px;
+
+            color: #666b5e;
+
+            font-size: 30px;
+
+            box-shadow:  5px 5px 10px #b5b5b5,
+                -5px -5px 10px #ffffff;
+
+        }
+
+        .s1 {
+
+            position: relative;
+            top: -130px;
+            left: 0;
+
+            width: 100%;
+            height: 1300px;
+
+            margin: 0;
+
+            background: #780117;
+            color: #e9c1e8;
+
+        }
+
+        #ctaBtn {
+
+            width: 550px;
+            height: 90px;
+
+            border-radius: 200px;
+
+            color: white;
+
+            font-size: 30px;
+
+            box-shadow:  5px 5px 16px #41010c,
+            -5px -5px 16px #af0122;
+
+        }
+
+        .content {
+
+            position: relative;
+            top: 450px;
+
+        }
+
+        .text {
+
+            position: relative;
+
+            left: 110px;
+
+        }
+
+        h1 {font-size: 100px;}
+        h2 {font-size: 50px; font-weight: normal;}
+
+        #websiteText {font-family: PDI;}
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .topnav a, .footer-nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .contact-btn {
+            margin-left: auto;
+        }
+
+        .body {
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-nav a {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .background-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5);
+            border-radius: 50%;
+            filter: blur(50px);
+            transform: translate(-50%, -50%);
+            animation: grow 10s infinite;
+            z-index: 1;
+        }
+
+        @keyframes grow {
+            0%, 100% {
+                width: 100px;
+                height: 100px;
+                opacity: 0.5;
+            }
+            50% {
+                width: 300px;
+                height: 300px;
+                opacity: 0.2;
+            }
+        }
+
+        .pricing, .features, .work-stages, .reviews, .contact {
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .pricing h2, .features h2, .work-stages h2, .reviews h2, .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .pricing .plan, .features .feature-card, .work-stages .stage-card, .reviews .review-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transform: rotate(45deg);
+            width: 200px;
+            text-align: center;
+        }
+
+        .pricing .plan {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .features .feature-card, .work-stages .stage-card {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+        }
+
+        .reviews {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reviews-container {
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+        }
+
+        .review-card {
+            min-width: 250px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form select, .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="/">
+            <div class="logo"></div>
+        </a>
+
+        <div class="contact-btn">
+            <button id="contactBtn">Обратный звонок</button>
+        </div>
+        
+    </header>
+
+    <div class="background-circle"></div>
+
+    <div class="body">
+
+        <div class="s1">
+
+            <div class="content">
+
+                <div class="text">
+
+                    <h1>Создание <span id="websiteText">сайтов</span> под ключ</h1>
+                    <h2>Быстро и качественно разработаем ваш сайт</h2>
+                    <button id="ctaBtn">Получить консультацию</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="pricing">
+        <h2>Цены и тарифы</h2>
+        <div class="plan">
+            <h3>Лендинг</h3>
+            <p>7 тыс. руб.</p>
+            <p>Срок разработки: 1 неделя</p>
+        </div>
+        <div class="plan">
+            <h3>Многостраничный сайт</h3>
+            <p>14 тыс. руб.</p>
+            <p>Срок разработки: 2 недели</p>
+        </div>
+        <div class="plan">
+            <h3>Интернет-магазин</h3>
+            <p>22 тыс. руб.</p>
+            <p>Срок разработки: 3 недели</p>
+        </div>
+        <div class="plan">
+            <h3>Приложение</h3>
+            <p>33 тыс. руб.</p>
+            <p>Срок разработки: 1 месяц</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Секреты эффективности наших сайтов</h2>
+        <div class="feature-card">
+            <h3>Сочный оригинальный дизайн</h3>
+            <p>Приятный для глаз, интуитивно понятный дизайн без шаблонов точно отвечает вашим задачам.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Интересные тексты</h3>
+            <p>Подаем информацию максимально убедительно и умеем зацепить посетителя в первые 5 секунд.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Яркая анимация</h3>
+            <p>Динамичное оформление добавляет эмоций и делает веб-ресурсы более привлекательными.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Чистый код</h3>
+            <p>Наши сайты разрабатываются с нуля, без шаблонов и конструкторов, поэтому они работают без сбоев, надежны и безопасны.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Моментальная загрузка</h3>
+            <p>Ресурсы загружаются быстрее, чем за секунду, благодаря подключению технологии CDN.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Получение заявок без рекламы</h3>
+            <p>Качественная SEO-оптимизация веб-страниц позволяет занимать первые строчки в поисковой выдаче.</p>
+        </div>
+    </section>
+
+    <section class="work-stages">
+        <h2>Этапы работы над сайтом</h2>
+        <div class="stage-card">
+            <h3>Интервью в удобном формате</h3>
+            <p>Вам не придется готовить сложные ТЗ и заполнять километровые брифы. Мы умеем слышать и легко вникаем даже в самые сложные бизнес-процессы.</p>
+        </div>
+        <div class="stage-card">
+            <h3>Подготовка текстов</h3>
+            <p>Наши редакторы подготовят тексты для любой, даже самой искушенной аудитории.</p>
+        </div>
+        <div class="stage-card">
+            <h3>Разработка дизайна</h3>
+            <p>Безупречный дизайн будет вызывать Вау-эффект и, как следствие, необратимое чувство оформить заказ.</p>
+        </div>
+        <div class="stage-card">
+            <h3>Адаптивная кроссбраузерная верстка</h3>
+            <p>Ваш сайт будет превосходно отображаться на любых устройствах и браузерах.</p>
+        </div>
+        <div class="stage-card">
+            <h3>Программирование на 1C-Bitrix</h3>
+            <p>Работаем на самой безопасной и удобной системе управления контентом.</p>
+        </div>
+        <div class="stage-card">
+            <h3>Доскональное тестирование</h3>
+            <p>Каждая страница проверяется с помощью более 30 различных тестов. Работа без ошибок гарантирована.</p>
+        </div>
+        <div class="stage-card">
+            <h3>Базовая SEO-оптимизация</h3>
+            <p>Сайт получит хороший старт для продвижения в ТОП, а вы — экономию на рекламе.</p>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>Отзывы клиентов</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <p>"Отличная работа! Сайт получился именно таким, каким я его представлял. Очень доволен результатом."</p>
+                <p>- Иван Петров</p>
+            </div>
+            <div class="review-card">
+                <p>"Команда СайтоДел выполнила работу в срок и с высочайшим качеством. Буду обращаться еще."</p>
+                <p>- Мария Иванова</p>
+            </div>
+            <div class="review-card">
+                <p>"Профессиональный подход и внимание к деталям. Сайт работает без сбоев и приносит прибыль."</p>
+                <p>- Алексей Смирнов</p>
+            </div>
+            <div class="review-card">
+                <p>"Спасибо за отличный сайт! Процесс разработки был простым и понятным."</p>
+                <p>- Ольга Кузнецова</p>
+            </div>
+            <div class="review-card">
+                <p>"Сайт загрузился молниеносно, и он выглядит великолепно. Потрясающая работа!"</p>
+                <p>- Дмитрий Соколов</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Связаться с нами</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Ваш телефон" required>
+            <select required>
+                <option value="" disabled selected>Тип сайта</option>
+                <option value="Лендинг">Лендинг</option>
+                <option value="Многостраничный сайт">Многостраничный сайт</option>
+                <option value="Интернет-магазин">Интернет-магазин</option>
+                <option value="Приложение">Приложение</option>
+            </select>
+            <button type="submit">Отправить</button>
+        </div>
+    </section>
+
+    <footer>
+        <nav class="footer-nav">
+            <a href="#about">О нас</a>
+            <a href="#blog">Блог</a>
+            <a href="#privacy">Политика конфиденциальности</a>
+        </nav>
+        <div class="copyright">
+            &copy; 2024 СайтоДел
+        </div>
+    </footer>
+
+</body>
+
+</html>
