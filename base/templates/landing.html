@@ -35,6 +35,30 @@
             font-family: YOR;
         }
 
+        
+        ::-webkit-scrollbar {
+            
+            width: 40px;
+            
+
+        }
+
+
+        ::-webkit-scrollbar-track{
+
+            border-radius: 10px;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #fff;
+            border: 15px solid #1f2230;
+            border-radius: 50px;
+
+        }
+
+
         body {
 
             position: absolute;
@@ -78,7 +102,7 @@
             z-index: 10;
 
             background-color: rgba(255, 255, 255, 0.9);
-            color: #666b5e;
+            color: #780117;
 
             backdrop-filter: blur(5px) saturate(180%);
             -webkit-backdrop-filter: blur(5px) saturate(180%);
@@ -101,6 +125,52 @@
 
         }
 
+        .section-links {
+
+            position: relative;
+            left: -100px;
+
+        }
+
+        .section-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .section-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 6px;
+    border-radius: 100px;
+    background-color: #780117;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .section-link:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+        ul {list-style-type: none;}
+
+        .section-link {
+
+            font-size: 30px;
+
+            margin-right: 50px;
+
+            float: left;
+
+            cursor: pointer;
+
+        }
+
         #contactBtn {
 
             width: 380px;
@@ -108,7 +178,7 @@
 
             border-radius: 200px;
 
-            color: #666b5e;
+            color: #780117;
 
             font-size: 30px;
 
@@ -131,9 +201,18 @@
             background: #780117;
             color: #e9c1e8;
 
+            border-radius: 0 0 200px 200px;
+
+            text-align: center;
+
+            z-index: 7;
+            
         }
 
         #ctaBtn {
+
+            position: relative;
+            top: 70px;
 
             width: 550px;
             height: 90px;
@@ -142,12 +221,48 @@
 
             color: white;
 
-            font-size: 30px;
+            font-size: 33px;
 
             box-shadow:  5px 5px 16px #41010c,
             -5px -5px 16px #af0122;
 
         }
+
+        .s2 {
+
+            position: relative;
+            top: -180px;
+            left: 0;
+            
+            width: 100%;
+            height: 1300px;
+            
+            background: #fff;
+            
+            color: #fff5fe;
+            
+            text-align: center;
+            
+            z-index: 6;
+
+        }
+
+        .text2 {
+
+            position: relative;
+            top: 130px;
+
+        }
+
+        .text2 h1 {
+
+            font-size: 100px;
+
+            color: #1f2230;
+
+
+        }
+
 
         .content {
 
@@ -160,29 +275,19 @@
 
             position: relative;
 
-            left: 110px;
-
         }
 
         h1 {font-size: 100px;}
         h2 {font-size: 50px; font-weight: normal;}
 
+        .desc1 {
+
+            position: relative;
+            top: 20px;
+
+        }
+
         #websiteText {font-family: PDI;}
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .topnav a, .footer-nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #000;
-        }
-
-        .contact-btn {
-            margin-left: auto;
-        }
 
         .body {
             text-align: left;
@@ -308,6 +413,32 @@
             <div class="logo"></div>
         </a>
 
+        <nav class="section-links">
+
+            <ul>
+
+                <a href="#general" class="section-link-link">
+
+                    <li class="section-link"><span>Главная</span></li>
+
+                </a>
+
+                <a href="#portfolio" class="section-link-link">
+
+                    <li class="section-link"><span>Наши работы</span></li>
+
+                </a>
+
+                <a>
+
+                    <li class="section-link"><span>Цены</span></li>
+
+                </a>
+
+            </ul>
+
+        </nav>
+
         <div class="contact-btn">
             <button id="contactBtn">Обратный звонок</button>
         </div>
@@ -318,14 +449,14 @@
 
     <div class="body">
 
-        <div class="s1">
+        <div class="s1" id="general">
 
             <div class="content">
 
                 <div class="text">
 
-                    <h1>Создание <span id="websiteText">сайтов</span> под ключ</h1>
-                    <h2>Быстро и качественно разработаем ваш сайт</h2>
+                    <h1 class="head1">Создание сайтов под ключ</h1>
+                    <h2 class="desc1">Быстро и  качественно разработаем ваш сайт</h2>
                     <button id="ctaBtn">Получить консультацию</button>
 
                 </div>
@@ -333,6 +464,22 @@
             </div>
 
         </div>
+
+        <div class="s2" id="portfolio">
+
+            <div class="content2">
+
+                <div class="text2">
+
+                    <h1>Наши работы</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
 
     </div>
 
@@ -473,6 +620,22 @@
         </div>
     </footer>
 
+    <script>
+
+        document.querySelectorAll('.section-link-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+    
+    </script>
+
 </body>
+
+
 
 </html>
