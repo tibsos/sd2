@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="{% static 'scss/base/landing.scss' %}" type='text/x-scss'>
     {% endcompress %}
 
+    <script src="{% static 'packages/jquery.min.js' %}"></script>
+
     <style>
 
         @font-face {
@@ -40,9 +42,7 @@
             
             width: 40px;
             
-
         }
-
 
         ::-webkit-scrollbar-track{
 
@@ -64,18 +64,25 @@
             position: absolute;
             top: 0; 
 
+            width: 100%;
+
             background: #fff;
             color: #000;
             letter-spacing: 3px;
             margin: 0;
             overflow-x: hidden;
+
         }
 
         button {
+
             background: none;
             border: none;
             cursor: pointer;
+
         }
+
+        a {color: inherit;}
 
         h1 {margin: 0;}
 
@@ -107,7 +114,6 @@
             backdrop-filter: blur(5px) saturate(180%);
             -webkit-backdrop-filter: blur(5px) saturate(180%);
 
-
         }
 
         .logo {
@@ -125,6 +131,38 @@
 
         }
 
+        #contactForm {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgba(0, 0, 0, 0.65);
+
+            z-index: 11;
+
+        }
+
+        .contact-form-wrapper {
+
+            position: relative;
+
+            width: 400px;
+            height: 300px;
+
+            border-radius: 30px;
+
+            background: #fff;
+
+        }
+
         .section-links {
 
             position: relative;
@@ -133,29 +171,29 @@
         }
 
         .section-link {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .section-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 6px;
-    border-radius: 100px;
-    background-color: #780117;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .section-link:hover::after {
-    visibility: visible;
-    transform: scaleX(1);
-  }
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .section-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 6px;
+            border-radius: 100px;
+            background-color: #780117;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .section-link:hover::after {
+            visibility: visible;
+            transform: scaleX(1);
+        }
 
         ul {list-style-type: none;}
 
@@ -184,6 +222,13 @@
 
             box-shadow:  5px 5px 10px #b5b5b5,
                 -5px -5px 10px #ffffff;
+
+        }
+
+        #contactBtn.in {
+
+            box-shadow: inset 5px 5px 10px #b5b5b5,
+                inset -5px -5px 10px #ffffff;
 
         }
 
@@ -225,6 +270,13 @@
 
             box-shadow:  5px 5px 16px #41010c,
             -5px -5px 16px #af0122;
+
+        }
+
+        #ctaBtn.in {
+
+            box-shadow: inset 5px 5px 16px #41010c,
+            inset -5px -5px 16px #af0122;
 
         }
 
@@ -409,6 +461,7 @@
 <body>
 
     <header>
+
         <a href="/">
             <div class="logo"></div>
         </a>
@@ -440,10 +493,22 @@
         </nav>
 
         <div class="contact-btn">
+
             <button id="contactBtn">Обратный звонок</button>
+
         </div>
         
     </header>
+
+    <div id="contactForm">
+
+        <div class="contact-form-wrapper">
+
+            <div id="closeContactForm">×</div>
+
+        </div>
+
+    </div>
 
     <div class="background-circle"></div>
 
@@ -479,8 +544,6 @@
 
         </div>
 
-        
-
     </div>
 
     <section class="pricing">
@@ -508,106 +571,9 @@
     </section>
 
     <section class="features">
-        <h2>Секреты эффективности наших сайтов</h2>
-        <div class="feature-card">
-            <h3>Сочный оригинальный дизайн</h3>
-            <p>Приятный для глаз, интуитивно понятный дизайн без шаблонов точно отвечает вашим задачам.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Интересные тексты</h3>
-            <p>Подаем информацию максимально убедительно и умеем зацепить посетителя в первые 5 секунд.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Яркая анимация</h3>
-            <p>Динамичное оформление добавляет эмоций и делает веб-ресурсы более привлекательными.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Чистый код</h3>
-            <p>Наши сайты разрабатываются с нуля, без шаблонов и конструкторов, поэтому они работают без сбоев, надежны и безопасны.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Моментальная загрузка</h3>
-            <p>Ресурсы загружаются быстрее, чем за секунду, благодаря подключению технологии CDN.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Получение заявок без рекламы</h3>
-            <p>Качественная SEO-оптимизация веб-страниц позволяет занимать первые строчки в поисковой выдаче.</p>
-        </div>
+       
     </section>
 
-    <section class="work-stages">
-        <h2>Этапы работы над сайтом</h2>
-        <div class="stage-card">
-            <h3>Интервью в удобном формате</h3>
-            <p>Вам не придется готовить сложные ТЗ и заполнять километровые брифы. Мы умеем слышать и легко вникаем даже в самые сложные бизнес-процессы.</p>
-        </div>
-        <div class="stage-card">
-            <h3>Подготовка текстов</h3>
-            <p>Наши редакторы подготовят тексты для любой, даже самой искушенной аудитории.</p>
-        </div>
-        <div class="stage-card">
-            <h3>Разработка дизайна</h3>
-            <p>Безупречный дизайн будет вызывать Вау-эффект и, как следствие, необратимое чувство оформить заказ.</p>
-        </div>
-        <div class="stage-card">
-            <h3>Адаптивная кроссбраузерная верстка</h3>
-            <p>Ваш сайт будет превосходно отображаться на любых устройствах и браузерах.</p>
-        </div>
-        <div class="stage-card">
-            <h3>Программирование на 1C-Bitrix</h3>
-            <p>Работаем на самой безопасной и удобной системе управления контентом.</p>
-        </div>
-        <div class="stage-card">
-            <h3>Доскональное тестирование</h3>
-            <p>Каждая страница проверяется с помощью более 30 различных тестов. Работа без ошибок гарантирована.</p>
-        </div>
-        <div class="stage-card">
-            <h3>Базовая SEO-оптимизация</h3>
-            <p>Сайт получит хороший старт для продвижения в ТОП, а вы — экономию на рекламе.</p>
-        </div>
-    </section>
-
-    <section class="reviews">
-        <h2>Отзывы клиентов</h2>
-        <div class="reviews-container">
-            <div class="review-card">
-                <p>"Отличная работа! Сайт получился именно таким, каким я его представлял. Очень доволен результатом."</p>
-                <p>- Иван Петров</p>
-            </div>
-            <div class="review-card">
-                <p>"Команда СайтоДел выполнила работу в срок и с высочайшим качеством. Буду обращаться еще."</p>
-                <p>- Мария Иванова</p>
-            </div>
-            <div class="review-card">
-                <p>"Профессиональный подход и внимание к деталям. Сайт работает без сбоев и приносит прибыль."</p>
-                <p>- Алексей Смирнов</p>
-            </div>
-            <div class="review-card">
-                <p>"Спасибо за отличный сайт! Процесс разработки был простым и понятным."</p>
-                <p>- Ольга Кузнецова</p>
-            </div>
-            <div class="review-card">
-                <p>"Сайт загрузился молниеносно, и он выглядит великолепно. Потрясающая работа!"</p>
-                <p>- Дмитрий Соколов</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <h2>Связаться с нами</h2>
-        <div class="contact-form">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="tel" placeholder="Ваш телефон" required>
-            <select required>
-                <option value="" disabled selected>Тип сайта</option>
-                <option value="Лендинг">Лендинг</option>
-                <option value="Многостраничный сайт">Многостраничный сайт</option>
-                <option value="Интернет-магазин">Интернет-магазин</option>
-                <option value="Приложение">Приложение</option>
-            </select>
-            <button type="submit">Отправить</button>
-        </div>
-    </section>
 
     <footer>
         <nav class="footer-nav">
@@ -619,6 +585,28 @@
             &copy; 2024 СайтоДел
         </div>
     </footer>
+
+    <script>
+
+        $('#ctaBtn, #contactBtn').click(function() {
+
+            btn = $(this);
+
+            btn.addClass('in');
+
+            setTimeout(function() {
+
+                btn.removeClass('in');
+
+            }, 250);
+
+
+            $('#contactForm').css('display', 'flex');
+            
+
+        });
+
+    </script>
 
     <script>
 
