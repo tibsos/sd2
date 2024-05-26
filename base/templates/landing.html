@@ -133,7 +133,7 @@
 
         #contactForm {
 
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
 
@@ -144,7 +144,7 @@
             justify-content: center;
             align-items: center;
 
-            background-color: rgba(0, 0, 0, 0.65);
+            background-color: rgba(0, 0, 0, 0.85);
 
             z-index: 11;
 
@@ -154,12 +154,43 @@
 
             position: relative;
 
-            width: 400px;
+            width: 500px;
             height: 300px;
 
             border-radius: 30px;
 
             background: #fff;
+
+        }
+
+        #closeContactForm {
+
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 200px;
+
+            font-size: 50px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:  2px 2px 8px #b5b5b5,
+                -2px -2px 8px #ffffff;
+
+        }
+
+        .form {
+
+
 
         }
 
@@ -504,7 +535,24 @@
 
         <div class="contact-form-wrapper">
 
-            <div id="closeContactForm">×</div>
+            <button id="closeContactForm">×</button>
+
+            <div class="form">
+
+                <input 
+                    type="text"
+                    id="clientName"
+                    placeholder="Ваше имя">
+
+                <input 
+                    type="text"
+                    id="clientPhone"
+                    placeholder="+7-888-888-88-88"
+                    value="+7">
+
+                <button type="button" id="sendFormBtn">Отправить</button>
+
+            </div>
 
         </div>
 
@@ -603,6 +651,34 @@
 
             $('#contactForm').css('display', 'flex');
             
+
+        });
+
+    </script>
+
+    <script>
+
+        $('#sendFormBtn').click(function() {
+
+            name = $('#clientName').val();
+            phone = $('#clientPhone').val();
+
+            $.ajax({
+
+                type: 'POST',
+
+                url: "/c",
+
+                data: {
+
+                    'csrfmiddlewaretoken': "{{ csrf_token }}",
+
+                    'n': name,
+                    'p': phone,
+
+                },
+
+            });
 
         });
 
