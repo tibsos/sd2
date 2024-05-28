@@ -1,0 +1,473 @@
+::-webkit-scrollbar {
+            
+    width: 40px;
+    
+}
+
+::-webkit-scrollbar-track{
+
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #fff;
+    border: 15px solid #1f2230;
+    border-radius: 50px;
+
+}
+
+
+body {
+
+    position: absolute;
+    top: 0; 
+
+    width: 100%;
+
+    background: #fff;
+    color: #000;
+    letter-spacing: 3px;
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+button {
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+a {color: inherit;}
+
+h1 {margin: 0;}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+header {
+
+    position: sticky;
+    top: 70px;
+    left: 200px;
+
+    width: calc(100% - 400px);
+
+    padding: 20px;
+
+    border-radius: 200px;
+
+    z-index: 10;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #780117;
+
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+
+}
+
+.logo {
+
+    position: relative;
+    left: 10px;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 200px;
+
+    box-shadow:  5px 5px 10px #b5b5b5,
+        -5px -5px 10px #ffffff;
+
+}
+
+#contactForm {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    z-index: 11;
+
+}
+
+.contact-form-wrapper {
+
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+
+    border-radius: 30px;
+
+    background: #fff;
+
+}
+
+#closeContactForm {
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 200px;
+
+    font-size: 50px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:  2px 2px 8px #b5b5b5,
+        -2px -2px 8px #ffffff;
+
+}
+
+.section-links {
+
+    position: relative;
+    left: -100px;
+
+}
+
+.section-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.section-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 6px;
+    border-radius: 100px;
+    background-color: #780117;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.section-link:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+ul {list-style-type: none;}
+
+.section-link {
+
+    font-size: 30px;
+
+    margin-right: 50px;
+
+    float: left;
+
+    cursor: pointer;
+
+}
+
+#contactBtn {
+
+    width: 380px;
+    height: 90px;
+
+    border-radius: 200px;
+
+    color: #780117;
+
+    font-size: 30px;
+
+    box-shadow:  5px 5px 10px #b5b5b5,
+        -5px -5px 10px #ffffff;
+
+}
+
+#contactBtn.in {
+
+    box-shadow: inset 5px 5px 10px #b5b5b5,
+        inset -5px -5px 10px #ffffff;
+
+}
+
+.s1 {
+
+    position: relative;
+    top: -130px;
+    left: 0;
+
+    width: 100%;
+    height: 1300px;
+
+    margin: 0;
+
+    background: #770016;
+    color: #e7bfe9;
+
+    border-radius: 0 0 200px 200px;
+
+    text-align: center;
+
+    z-index: 7;
+    
+}
+
+#ctaBtn {
+
+    position: relative;
+    top: 70px;
+
+    width: 550px;
+    height: 90px;
+
+    border-radius: 200px;
+
+    color: white;
+
+    font-size: 33px;
+
+    box-shadow:  5px 5px 16px #41010c,
+    -5px -5px 16px #af0122;
+
+}
+
+#ctaBtn.in {
+
+    box-shadow: inset 5px 5px 16px #41010c,
+    inset -5px -5px 16px #af0122;
+
+}
+
+.s2 {
+
+    position: relative;
+    top: -180px;
+    left: 0;
+    
+    width: 100%;
+    height: 1300px;
+
+    display: flex;
+    justify-content: center;
+    
+    background: #fff;
+    
+    color: #fff5fe;
+    
+    text-align: center;
+    
+    z-index: 6;
+
+}
+
+.content2 {
+
+    position: relative;
+    top: 0px;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.text2 {
+
+    position: relative;
+    top: 0px;
+
+}
+
+.text2 h1 {
+
+    font-size: 100px;
+
+    color: #1f2230;
+
+
+}
+
+.portfolio-works {
+
+    position: relative;
+    top: 150px;
+
+
+    width: 1300px;
+    height: 900px;
+
+    display: flex;
+    
+    
+    border: 1px solid black;
+
+}
+
+.portfolio-control {
+
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 200px;
+
+    box-shadow:  5px 5px 10px #b5b5b5,
+        -5px -5px 10px #ffffff;
+
+}
+
+.portfolio-control-svg {
+
+    transform: scale(0.7);
+
+}
+
+.content {
+
+    position: relative;
+    top: 450px;
+
+}
+
+.text {
+
+    position: relative;
+
+}
+
+h1 {font-size: 100px;}
+h2 {font-size: 50px; font-weight: normal;}
+
+.desc1 {
+
+    position: relative;
+    top: 20px;
+
+}
+
+#websiteText {font-family: PDI;}
+
+.body {
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+.pricing, .features, .work-stages, .reviews, .contact {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.pricing h2, .features h2, .work-stages h2, .reviews h2, .contact h2 {
+    margin-bottom: 20px;
+}
+
+.pricing .plan, .features .feature-card, .work-stages .stage-card, .reviews .review-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(5deg);
+    width: 200px;
+    text-align: center;
+}
+
+.pricing .plan {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.features .feature-card, .work-stages .stage-card {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+.reviews {
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.review-card {
+    min-width: 250px;
+    flex-shrink: 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form select, .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
